@@ -58,11 +58,11 @@ class SecondViewController: UIViewController {
     }
 
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let navigation = segue.destination as! UINavigationController
-        let todoVC = navigation.topViewController as! TodoView
-        todoVC.userID = uid
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let navigation = segue.destination as! UINavigationController
+//        let todoVC = navigation.topViewController as! TodoView
+//        todoVC.userID = uid
+//    }
         
     /*
     // MARK: - Navigation
