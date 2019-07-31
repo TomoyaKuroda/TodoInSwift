@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     @IBAction func signinAction(_ sender: Any) {
         if self.textEmail.text == "" || self.textPassword.text == "" {
             //Alert to tell the user that there was an error because they didn't fill anything in the textfields because they didn't fill anything in
-            let alertController = UIAlertController(title: "Error", message: "Please enter an email and password.", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Oops", message: "Please enter an email and password.", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alertController.addAction(defaultAction)
             
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
                     self.performSegue(withIdentifier: "loginSegue", sender: self)
                 } else {
                     //Tells the user that there is an error and then gets firebase to tell them the error
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    let alertController = UIAlertController(title: "Oops", message: error?.localizedDescription, preferredStyle: .alert)
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(defaultAction)
                     self.present(alertController, animated: true, completion: nil)
@@ -56,10 +56,12 @@ class ViewController: UIViewController {
         }
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let navigation = segue.destination as! UINavigationController
-//        let todoVC = navigation.topViewController as! TodoView
-//        todoVC.userID = uid
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is UINavigationController {
+        let navigation = segue.destination as! UINavigationController
+        let todoVC = navigation.topViewController as! TodoView
+        todoVC.userID = uid
+        }
+    }
 }
 

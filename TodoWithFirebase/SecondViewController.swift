@@ -32,7 +32,7 @@ class SecondViewController: UIViewController {
     @IBAction func registerAction(_ sender: Any){
         
         if textEmail.text == "" || textPassword.text == "" {
-        let alertController = UIAlertController(title: "Error", message: "Please enter both your email and password", preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Oops!", message: "Please enter both your email and password", preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(defaultAction)
         
@@ -46,7 +46,7 @@ class SecondViewController: UIViewController {
 //                    self.performSegue(withIdentifier: "loginSegue", sender: self)
                     
                 } else {
-                    let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    let alertController = UIAlertController(title: "Oops!", message: error?.localizedDescription, preferredStyle: .alert)
                     
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(defaultAction)
@@ -56,13 +56,6 @@ class SecondViewController: UIViewController {
             }
         }
     }
-
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let navigation = segue.destination as! UINavigationController
-//        let todoVC = navigation.topViewController as! TodoView
-//        todoVC.userID = uid
-//    }
         
     /*
     // MARK: - Navigation
