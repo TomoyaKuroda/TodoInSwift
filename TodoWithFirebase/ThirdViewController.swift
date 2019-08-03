@@ -15,6 +15,8 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var textEmail: UITextField!
     
     var uid: String = ""
+    var user = User(uid: "", email: "", password: "")
+
     override func viewDidLoad() {
         super.viewDidLoad()
         textEmail.text = ""
@@ -27,7 +29,8 @@ class ThirdViewController: UIViewController {
     
     
     @IBAction func submitAction(_ sender: Any) {
-        if self.textEmail.text == "" {
+        self.user.email = textEmail.text!
+        if self.user.email == "" {
             let alertController = UIAlertController(title: "Oops!", message: "Please enter an email.", preferredStyle: .alert)
             
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -36,7 +39,7 @@ class ThirdViewController: UIViewController {
             present(alertController, animated: true, completion: nil)
             
         } else {
-            Auth.auth().sendPasswordReset(withEmail: self.textEmail.text!, completion: { (error) in
+            Auth.auth().sendPasswordReset(withEmail: self.user.email, completion: { (error) in
                 
                 var title = ""
                 var message = ""

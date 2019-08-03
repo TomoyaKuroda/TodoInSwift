@@ -15,8 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var textEmail: UITextField!
     
     @IBOutlet weak var textPassword: UITextField!
-    
     var uid: String = ""
+    var user = User(uid: "", email: "", password: "")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         textEmail.text = ""
@@ -32,7 +33,9 @@ class ViewController: UIViewController {
     
     
     @IBAction func signinAction(_ sender: Any) {
-        if self.textEmail.text == "" || self.textPassword.text == "" {
+        self.user.email = textEmail.text!
+        self.user.password = textPassword.text!
+        if self.user.email == "" || self.user.password == "" {
             //Alert to tell the user that there was an error because they didn't fill anything in the textfields because they didn't fill anything in
             let alertController = UIAlertController(title: "Oops", message: "Please enter an email and password.", preferredStyle: .alert)
             let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
@@ -41,9 +44,9 @@ class ViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
             
         } else {
-            Auth.auth().signIn(withEmail: self.textEmail.text!, password: self.textPassword.text!) { (result, error) in
+            Auth.auth().signIn(withEmail: self.user.email, password: self.user.password) { (result, error) in
                 if error == nil {
-                    self.uid = (result?.user.uid)!
+                    self.user.uid = (result?.user.uid)!
                     self.performSegue(withIdentifier: "loginSegue", sender: self)
                 } else {
                     //Tells the user that there is an error and then gets firebase to tell them the error
@@ -60,7 +63,7 @@ class ViewController: UIViewController {
         if segue.destination is UINavigationController {
         let navigation = segue.destination as! UINavigationController
         let todoVC = navigation.topViewController as! TodoView
-        todoVC.userID = uid
+        todoVC.userID = user.uid
         }
     }
 }

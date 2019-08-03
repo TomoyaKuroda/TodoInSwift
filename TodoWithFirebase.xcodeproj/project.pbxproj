@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2226534822F5245800CF3811 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226534722F5245800CF3811 /* User.swift */; };
 		2268CA3222EBA88100E320B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2268CA3122EBA88100E320B2 /* AppDelegate.swift */; };
 		2268CA3422EBA88100E320B2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2268CA3322EBA88100E320B2 /* ViewController.swift */; };
 		2268CA3722EBA88100E320B2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2268CA3522EBA88100E320B2 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2226534722F5245800CF3811 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2268CA2E22EBA88100E320B2 /* TodoWithFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodoWithFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2268CA3122EBA88100E320B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2268CA3322EBA88100E320B2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			children = (
 				2268CA3122EBA88100E320B2 /* AppDelegate.swift */,
 				2268CA3322EBA88100E320B2 /* ViewController.swift */,
+				2226534722F5245800CF3811 /* User.swift */,
 				2DB0229922EFA2D8004A076B /* SecondViewController.swift */,
 				2DB0229B22EFA2EA004A076B /* ThirdViewController.swift */,
 				2268CA3522EBA88100E320B2 /* Main.storyboard */,
@@ -225,6 +228,7 @@
 				2DB0229A22EFA2D8004A076B /* SecondViewController.swift in Sources */,
 				2DB0229C22EFA2EA004A076B /* ThirdViewController.swift in Sources */,
 				2268CA4822EBEC2F00E320B2 /* TodoCell.swift in Sources */,
+				2226534822F5245800CF3811 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

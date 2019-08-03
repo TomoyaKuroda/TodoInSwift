@@ -16,6 +16,8 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var textPassword: UITextField!
     
     var uid: String = ""
+    var user = User(uid: "", email: "", password: "")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         textEmail.text = ""
@@ -30,19 +32,20 @@ class SecondViewController: UIViewController {
     
     
     @IBAction func registerAction(_ sender: Any){
-        
-        if textEmail.text == "" || textPassword.text == "" {
+        self.user.email = textEmail.text!
+        self.user.password = textPassword.text!
+        if (self.user.email == "" || self.user.password == "") {
         let alertController = UIAlertController(title: "Oops!", message: "Please enter both your email and password", preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alertController.addAction(defaultAction)
         
         present(alertController, animated: true, completion: nil)
         } else {
-            Auth.auth().createUser(withEmail: textEmail.text!, password: textPassword.text!) { (result, error) in
+            Auth.auth().createUser(withEmail: self.user.email, password: self.user.password) { (result, error) in
                 if error == nil {
-                    self.uid = (result?.user.uid)!
-                    let ref = Database.database().reference(withPath: "users").child(self.uid)
-                    ref.setValue(["email": self.textEmail.text!, "password": self.textPassword.text!])
+                    self.user.uid = (result?.user.uid)!
+                    let ref = Database.database().reference(withPath: "users").child(self.user.uid)
+                    ref.setValue(["email": self.user.email, "password": self.user.password])
 //                    self.performSegue(withIdentifier: "loginSegue", sender: self)
                     
                 } else {

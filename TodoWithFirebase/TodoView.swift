@@ -27,6 +27,7 @@ class TodoView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var todos: [Todo] = []
     var userID: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setWelcomeLabel()
@@ -98,6 +99,7 @@ class TodoView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return todos.count
     }
     
+    // Update checmmark icon
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath) as! TodoCell
         cell.todoLabel.text = todos[indexPath.row].todoName
@@ -110,7 +112,7 @@ class TodoView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-          let ref = Database.database().reference(withPath: "users").child(userID!).child(todos[indexPath.row].todoName)
+          let ref = Database.database().reference(withPath: "users").child(userID!).child("todos").child(todos[indexPath.row].todoName)
         
         if todos[indexPath.row].isChecked {
             todos[indexPath.row].isChecked = false
@@ -124,6 +126,9 @@ class TodoView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         tableView.reloadData()
     }
+    
+    
+    // Delete todo
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let ref = Database.database().reference(withPath: "users").child(userID!).child("todos").child(todos[indexPath.row].todoName)
