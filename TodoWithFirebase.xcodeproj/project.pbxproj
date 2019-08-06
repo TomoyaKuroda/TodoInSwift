@@ -19,6 +19,8 @@
 		2DB0229A22EFA2D8004A076B /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB0229922EFA2D8004A076B /* SecondViewController.swift */; };
 		2DB0229C22EFA2EA004A076B /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB0229B22EFA2EA004A076B /* ThirdViewController.swift */; };
 		9DCF4BB3D508DC864247E44F /* Pods_TodoWithFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 443322FCF8110C879A195115 /* Pods_TodoWithFirebase.framework */; };
+		BDAD320E22F9C7EE00AD2801 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD320D22F9C7EE00AD2801 /* Todo.swift */; };
+		BDAD321022F9C8B100AD2801 /* addViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD320F22F9C8B100AD2801 /* addViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		443322FCF8110C879A195115 /* Pods_TodoWithFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodoWithFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B36D6401491BA04875B3BFA /* Pods-TodoWithFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoWithFirebase.release.xcconfig"; path = "Target Support Files/Pods-TodoWithFirebase/Pods-TodoWithFirebase.release.xcconfig"; sourceTree = "<group>"; };
 		7920EF8CE6099605C6CE5027 /* Pods-TodoWithFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoWithFirebase.debug.xcconfig"; path = "Target Support Files/Pods-TodoWithFirebase/Pods-TodoWithFirebase.debug.xcconfig"; sourceTree = "<group>"; };
+		BDAD320D22F9C7EE00AD2801 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		BDAD320F22F9C8B100AD2801 /* addViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,11 +89,13 @@
 				2268CA3122EBA88100E320B2 /* AppDelegate.swift */,
 				2268CA3322EBA88100E320B2 /* ViewController.swift */,
 				2226534722F5245800CF3811 /* User.swift */,
+				BDAD320D22F9C7EE00AD2801 /* Todo.swift */,
 				2DB0229922EFA2D8004A076B /* SecondViewController.swift */,
 				2DB0229B22EFA2EA004A076B /* ThirdViewController.swift */,
 				2268CA3522EBA88100E320B2 /* Main.storyboard */,
 				2268CA4722EBEC2F00E320B2 /* TodoCell.swift */,
 				2268CA4522EBBBA000E320B2 /* TodoView.swift */,
+				BDAD320F22F9C8B100AD2801 /* addViewController.swift */,
 				2268CA3822EBA88400E320B2 /* Assets.xcassets */,
 				2268CA3A22EBA88400E320B2 /* LaunchScreen.storyboard */,
 				2268CA3D22EBA88400E320B2 /* Info.plist */,
@@ -225,6 +231,8 @@
 				2268CA4622EBBBA000E320B2 /* TodoView.swift in Sources */,
 				2268CA3422EBA88100E320B2 /* ViewController.swift in Sources */,
 				2268CA3222EBA88100E320B2 /* AppDelegate.swift in Sources */,
+				BDAD320E22F9C7EE00AD2801 /* Todo.swift in Sources */,
+				BDAD321022F9C8B100AD2801 /* addViewController.swift in Sources */,
 				2DB0229A22EFA2D8004A076B /* SecondViewController.swift in Sources */,
 				2DB0229C22EFA2EA004A076B /* ThirdViewController.swift in Sources */,
 				2268CA4822EBEC2F00E320B2 /* TodoCell.swift in Sources */,

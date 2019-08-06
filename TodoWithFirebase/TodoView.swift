@@ -10,10 +10,7 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 
-struct Todo {
-    var isChecked: Bool
-    var todoName: String
-}
+
 
 class TodoView: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
@@ -136,6 +133,16 @@ class TodoView: UIViewController, UITableViewDelegate, UITableViewDataSource {
             todos.remove(at: indexPath.row)
             tableView.reloadData()
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is addViewController
+        {
+            let vc = segue.destination as? addViewController
+            vc?.userID=userID
+            
+        }
+        
     }
     
     
