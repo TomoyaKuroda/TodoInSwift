@@ -21,6 +21,7 @@
 		9DCF4BB3D508DC864247E44F /* Pods_TodoWithFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 443322FCF8110C879A195115 /* Pods_TodoWithFirebase.framework */; };
 		BDAD320E22F9C7EE00AD2801 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD320D22F9C7EE00AD2801 /* Todo.swift */; };
 		BDAD321022F9C8B100AD2801 /* addViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD320F22F9C8B100AD2801 /* addViewController.swift */; };
+		C97C8D9D22FB278200EC3C7C /* Webp.net-resizeimage-2.png in Resources */ = {isa = PBXBuildFile; fileRef = C97C8D9C22FB278200EC3C7C /* Webp.net-resizeimage-2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		7920EF8CE6099605C6CE5027 /* Pods-TodoWithFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoWithFirebase.debug.xcconfig"; path = "Target Support Files/Pods-TodoWithFirebase/Pods-TodoWithFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 		BDAD320D22F9C7EE00AD2801 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		BDAD320F22F9C8B100AD2801 /* addViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addViewController.swift; sourceTree = "<group>"; };
+		C97C8D9C22FB278200EC3C7C /* Webp.net-resizeimage-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Webp.net-resizeimage-2.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				2268CA3822EBA88400E320B2 /* Assets.xcassets */,
 				2268CA3A22EBA88400E320B2 /* LaunchScreen.storyboard */,
 				2268CA3D22EBA88400E320B2 /* Info.plist */,
+				C97C8D9C22FB278200EC3C7C /* Webp.net-resizeimage-2.png */,
 				2268CA4922EC0C1000E320B2 /* GoogleService-Info.plist */,
 			);
 			path = TodoWithFirebase;
@@ -174,6 +177,7 @@
 			files = (
 				2268CA3C22EBA88400E320B2 /* LaunchScreen.storyboard in Resources */,
 				2268CA4A22EC0C1000E320B2 /* GoogleService-Info.plist in Resources */,
+				C97C8D9D22FB278200EC3C7C /* Webp.net-resizeimage-2.png in Resources */,
 				2268CA3922EBA88400E320B2 /* Assets.xcassets in Resources */,
 				2268CA3722EBA88100E320B2 /* Main.storyboard in Resources */,
 			);
