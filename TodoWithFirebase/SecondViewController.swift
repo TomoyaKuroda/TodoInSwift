@@ -43,6 +43,12 @@ class SecondViewController: UIViewController {
         } else {
             Auth.auth().createUser(withEmail: self.user.email, password: self.user.password) { (result, error) in
                 if error == nil {
+                    let alertController = UIAlertController(title: "Success!", message: "Thanks for signing up!", preferredStyle: .alert)
+                    let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                    
                     self.user.uid = (result?.user.uid)!
                     let ref = Database.database().reference(withPath: "users").child(self.user.uid)
                     ref.setValue(["email": self.user.email, "password": self.user.password])

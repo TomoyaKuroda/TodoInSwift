@@ -264,7 +264,6 @@
                                 <connections>
                                     <action selector="registerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EmZ-A9-OgZ"/>
                                     <action selector="registerAction:" destination="LnW-Y6-DzE" eventType="touchUpInside" id="div-id-ebL"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="JaG-94-1lu"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9S-OQ-sei">
