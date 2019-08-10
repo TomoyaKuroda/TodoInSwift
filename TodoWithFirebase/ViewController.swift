@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  TodoWithFirebase
 //
-//  Created by user user on 2019/07/26.
+//  Created by Tomoya Kuroda on 2019/07/26.
 //  Copyright © 2019 Group8. All rights reserved.
 //
 
@@ -20,12 +20,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Reset the input whenever user come to this view
         textEmail.text = ""
         textPassword.text = ""
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        // Reset the input whenever user come to this view
         textEmail.text = ""
         textPassword.text = ""
     }
@@ -33,6 +35,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func signinAction(_ sender: Any) {
+        // Assign the value from input
         self.user.email = textEmail.text!
         self.user.password = textPassword.text!
         if self.user.email == "" || self.user.password == "" {
@@ -44,8 +47,10 @@ class ViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
             
         } else {
+            // Authenticate with given credential information
             Auth.auth().signIn(withEmail: self.user.email, password: self.user.password) { (result, error) in
                 if error == nil {
+                    // If there is no error, go to Todo List
                     self.user.uid = (result?.user.uid)!
                     self.performSegue(withIdentifier: "loginSegue", sender: self)
                 } else {
@@ -61,6 +66,7 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is UINavigationController {
+        // Pass the userID to TodoView Controller
         let navigation = segue.destination as! UINavigationController
         let todoVC = navigation.topViewController as! TodoView
         todoVC.userID = user.uid
