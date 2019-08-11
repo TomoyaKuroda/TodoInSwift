@@ -10,10 +10,10 @@ import UIKit
 
 class TodoCell: UITableViewCell {
 
+    // Define variables
     @IBOutlet weak var todoLabel: UILabel!
-    
-    
     @IBOutlet weak var checkmarkImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

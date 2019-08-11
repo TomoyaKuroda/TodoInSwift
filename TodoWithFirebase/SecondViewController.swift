@@ -40,6 +40,12 @@ class SecondViewController: UIViewController {
         alertController.addAction(defaultAction)
         
         present(alertController, animated: true, completion: nil)
+        } else if (self.user.password.count < 6) {
+            let alertController = UIAlertController(title: "Oops!", message: "The longth of password must be more than or equal to 6", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            present(alertController, animated: true, completion: nil)
         } else {
             Auth.auth().createUser(withEmail: self.user.email, password: self.user.password) { (result, error) in
                 if error == nil {

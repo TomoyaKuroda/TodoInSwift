@@ -28,8 +28,10 @@ class TodoView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         setWelcomeLabel()
+        // Enable ViewController to configure tableViewCell
         tableTodo.delegate = self
         tableTodo.dataSource = self
+        // height of each Todo
         tableTodo.rowHeight = 80
         
         
@@ -68,10 +70,12 @@ class TodoView: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+    // Configure number of sections
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    // Configure the number of rows in section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todos.count
     }
