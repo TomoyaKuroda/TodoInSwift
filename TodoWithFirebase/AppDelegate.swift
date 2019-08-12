@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  TodoWithFirebase
 //
-//  Created by user user on 2019/07/26.
+//  Created by Tomoya Kuroda on 2019/07/26.
 //  Copyright © 2019 Group8. All rights reserved.
 //
 

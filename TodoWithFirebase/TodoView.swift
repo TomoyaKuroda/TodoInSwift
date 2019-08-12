@@ -2,7 +2,7 @@
 //  TodoView.swift
 //  TodoWithFirebase
 //
-//  Created by user user on 2019/07/26.
+//  Created by Tomoya Kuroda on 2019/07/26.
 //  Copyright © 2019 Group8. All rights reserved.
 //
 
@@ -28,15 +28,17 @@ class TodoView: UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         setWelcomeLabel()
+        // Enable ViewController to configure tableViewCell
         tableTodo.delegate = self
         tableTodo.dataSource = self
+        // height of each Todo
         tableTodo.rowHeight = 80
         
         
         loadTodos()
         // Do any additional setup after loading the view.
     }
-    
+    // Display Welcome message
     func setWelcomeLabel(){
         let userRef = Database.database().reference(withPath: "users").child(userID!)
         userRef.observeSingleEvent(of: .value) { (snapshot) in
@@ -45,34 +47,14 @@ class TodoView: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.welcomeLabel.text = "Hello " + email! + "!"
         }
     }
-    
+    // Logout
     @IBAction func logoutAction(_ sender: Any) {
         try! Auth.auth().signOut()
         self.dismiss(animated: true, completion: nil)
     }
     
     
-    @IBAction func addTodo(_ sender: Any) {
-        let todoAlert = UIAlertController(title: "New Todo", message: "Add a todo", preferredStyle: .alert)
-        todoAlert.addTextField()
-        let addTodoAction = UIAlertAction(title: "Add", style: .default) { (action) in
-            let todoText = todoAlert.textFields![0].text
-            self.todos.append(Todo(isChecked: false, todoName: todoText!))
-            let ref = Database.database().reference(withPath: "users").child(self.userID!).child("todos")
-            ref.child(todoText!).setValue(["isChecked": false])
-            self.tableTodo.reloadData()
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
-        
-        todoAlert.addAction(addTodoAction)
-        todoAlert.addAction(cancelAction)
-        
-        present(todoAlert, animated: true, completion: nil)
-    }
-    
-    
-    
+    // Get data from firabase database
     func loadTodos(){
         let ref = Database.database().reference(withPath: "users").child(userID!).child("todos")
         ref.observeSingleEvent(of: .value) { (snapshot) in
@@ -88,15 +70,17 @@ class TodoView: UIViewController, UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+    // Configure number of sections
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    // Configure the number of rows in section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todos.count
     }
     
-    // Update checmmark icon
+    // Update checmmark icon according to the value "isChecked"
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath) as! TodoCell
         cell.todoLabel.text = todos[indexPath.row].todoName
@@ -107,7 +91,7 @@ class TodoView: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
-    
+    // Update isChecked whenever the task is selected
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
           let ref = Database.database().reference(withPath: "users").child(userID!).child("todos").child(todos[indexPath.row].todoName)
         
@@ -134,7 +118,7 @@ class TodoView: UIViewController, UITableViewDelegate, UITableViewDataSource {
             tableView.reloadData()
         }
     }
-    
+    // Pass userID to addViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.destination is addViewController
         {
